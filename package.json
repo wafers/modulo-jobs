@@ -11,7 +11,22 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "mongodb-core": "^1.2.10",
     "morgan": "~1.6.1",
+    "request": "^2.60.0",
+    "seraph": "^0.13.2",
     "serve-favicon": "~2.3.0"
-  }
+  },
+  "description": "Job System for Modulo",
+  "main": "app.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wafers/modulo-jobs.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wafers/modulo-jobs/issues"
+  },
+  "homepage": "https://github.com/wafers/modulo-jobs#readme"
 }
