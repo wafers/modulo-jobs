@@ -1,4 +1,3 @@
-var config = (process.env.DATABASE_URL) ? process.env.DATABASE_URL :  require(__dirname + '/config').neo4j;
 var request = require('request');
 
 var getAllNamesFromRegistry = module.exports.getAllNamesFromRegistry = function(cb) {
