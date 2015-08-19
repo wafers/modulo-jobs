@@ -11,11 +11,13 @@
     "debug": "~2.2.0",
     "express": "~4.13.1",
     "jade": "~1.11.0",
+    "mongodb": "^2.0.42",
     "mongodb-core": "^1.2.10",
     "morgan": "~1.6.1",
     "request": "^2.60.0",
     "seraph": "^0.13.2",
-    "serve-favicon": "~2.3.0"
+    "serve-favicon": "~2.3.0",
+    "underscore": "^1.8.3"
   },
   "description": "Job System for Modulo",
   "main": "app.js",
