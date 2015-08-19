@@ -6,17 +6,17 @@ MongoClient = require('mongodb').MongoClient,
   DB, jobs;
 
 MongoClient.connect(url, function(err, db) {
-  if(err) console.log(err)
-  console.log('Correctly connects to the database');
-  DB = db;
-  jobs = DB.collection('jobs');
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('Correctly connects to the database');
+    DB = db;
+    jobs = DB.collection('jobs');
+  }
 })
 
-// var Timestamp = mongo.Timestamp;
-// var Timestamp = new Date;
-
+//Retrieve all module names from NPM & run a callback on them
 var getAllNamesFromRegistry = module.exports.getAllNamesFromRegistry = function(cb) {
-  //Retrieve all module names from NPM & run a callback on them
   request({
     url: 'https://skimdb.npmjs.com/registry/_all_docs',
     json: true
@@ -37,8 +37,8 @@ var getAllNamesFromRegistry = module.exports.getAllNamesFromRegistry = function(
   })
 }
 
+// function that runs when the database initializes
 var databaseInit = module.exports.databaseInit = function() {
-  // function that runs when the database initializes
   getAllNamesFromRegistry(function(moduleArray){
     getAllNamesFromDb(moduleArray,function(collection, items) {
       var difference = _.difference(collection, items);
@@ -56,7 +56,7 @@ var databaseInit = module.exports.databaseInit = function() {
       }
     })
 
-    // change all processes older than 48 hours to "Ready"
+    // change all processes older than 48 hours to "ready"
     var t = new Date() - 172800000;
 
     jobs.updateMany(
@@ -66,8 +66,8 @@ var databaseInit = module.exports.databaseInit = function() {
   })
 }
 
+//Retrieve all module names from Mongo & run a callback on them
 var getAllNamesFromDb = module.exports.getAllNamesFromDb = function(arr, cb) {
-  //Retrieve all module names from Mongo & run a callback on them
   jobs.distinct('module',function(err, docs){
     console.log("Successfully gets names from Mongo")
     cb(arr, docs)
