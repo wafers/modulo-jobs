@@ -1,4 +1,4 @@
-var config = require(__dirname + '/../config.js'),
+var config = (process.env.MONGOLAB_URI) ? process.env.MONGOLAB_URI : require(__dirname + '/../config.js'),
    helpers = require(__dirname + '/../helpers.js'),
    express = require('express'),
     router = express.Router(),
