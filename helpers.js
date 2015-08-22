@@ -1,4 +1,4 @@
-var config = require(__dirname + '/config.js'),
+var config = (process.env.MONGOLAB_URI) ? process.env.MONGOLAB_URI : require(__dirname + '/../config.js'),
    request = require('request'),
          _ = require('underscore'),
 MongoClient = require('mongodb').MongoClient,
