@@ -46,7 +46,7 @@ var databaseInit = module.exports.databaseInit = function() {
       var moduleArray = [];
 
       _.each(difference, function(item) {
-        var module = { module: item, status: 'new', lastUpdated: new Date()-1};
+        var module = { module: item, status: 'ready', lastUpdated: new Date()-1};
         moduleArray.push(module)
       });
       console.log(moduleArray.length)
