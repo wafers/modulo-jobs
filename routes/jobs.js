@@ -25,7 +25,6 @@ router.get('/', function(req, res, next) {
             res.json({module: moduleName});
             jobs.findAndModify({ module: moduleName }, [], { $set: { status: "in progress" } }, { new: true }, function(err, doc) { console.log(err, doc); });  
         });
-    });
 });
 
 router.post('/', function(req, res, next) {
@@ -40,7 +39,6 @@ router.post('/', function(req, res, next) {
             res.json({module: moduleName});
             jobs.findAndModify({ module: moduleName }, [], { $set: { status: "in progress" } }, { new: true }, function(err, doc) { console.log(err, doc); });
         });
-    });
 });
 
 module.exports = router;
