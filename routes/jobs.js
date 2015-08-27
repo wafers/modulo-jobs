@@ -49,6 +49,7 @@ router.post('/', function(req, res, next) {
                         if(err){
                             console.log(err)
                         }else{
+                            res.statusCode(201)
                             res.json({module: newModuleName});
                             console.log("Sent out module ", newModuleName); 
                         }
