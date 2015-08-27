@@ -27,6 +27,7 @@ router.get('/', function(req, res, next) {
                   console.log(err)
               } else{
                 console.log("Sent out module ", doc.value.module);
+            }
               });
         });
 });
