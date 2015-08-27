@@ -59,10 +59,10 @@ var databaseInit = module.exports.databaseInit = function() {
     // change all processes older than 48 hours to "ready"
     var t = new Date() - 172800000;
 
-    jobs.updateMany(
-      { lastUpdated: { $lte: t } }, { $set: { status: "ready" } }, 
-      function(err, results) { console.log(results); }
-    );
+    // jobs.updateMany(
+    //   { lastUpdated: { $lte: t } }, { $set: { status: "ready" } }, 
+    //   function(err, results) { console.log(results); }
+    // );
   })
 }
 
